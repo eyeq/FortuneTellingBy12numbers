@@ -1,0 +1,13 @@
+@charset 'utf-8';
+body, input
+{
+	letter-spacing: 0.03em;
+	line-height: 1.6em;
+	font-family: 'Hiragino Kaku Gothic ProN', 'ƒqƒ‰ƒMƒmŠpƒS ProN W3', Meiryo, 'ƒƒCƒŠƒI', sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+body
+{
+	background: #F9D6B3 url('background.png') no-repeat center top scroll;
+}

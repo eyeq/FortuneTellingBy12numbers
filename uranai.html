@@ -1,0 +1,41 @@
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="eyeq" />
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<link rel="stylesheet" href="common.css" type="text/css" />
+		
+		<script type="text/javascript">
+			function move()
+			{
+				var number = document.in.number.value;
+				var ch0 = number.charAt(0);
+				var ch1 = number.charAt(1);
+				if(number.match('(' + ch0 + ch1 + '){6}') || number.match(/1234567890/) || number.match(/9876543210/))
+				{
+					window.location.href='result_escape.html';
+				} else
+				{
+					window.location.href='result_caught.html';
+				}
+				return false;
+			}
+		</script>
+
+		<title>12桁の数字占い</title>
+	</head>
+	<body>
+		<div align="center">
+			<div><font size="+3px">～１２桁の数字であなたの性格をおみとおす～</font></div>
+			<div>すべての数字は意味を持っています</div>
+			<div>あなたの運命の数字は何を示していますか？</div>
+			
+			<form name="in" onsubmit="return move()">
+				<div style="border-style: double; border-width: 0.4em; padding: 0.7em 0.2em 0.6em 0.2em; border-color: #A8C2FF; border-radius: 0.4em;">
+					<div>マイナンバー：<input type="text" name="number" pattern="^[0-9]+$"  minlength="12" maxlength="12" required /></div>
+					<input type="submit" name="submit" value="†占う†" />
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
