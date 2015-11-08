@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ja">
 	<head>
 		<meta charset="utf-8" />
@@ -9,13 +10,19 @@
 			function move()
 			{
 				var number = document.in.number.value;
+				var sum = 0;
+				for(var i = 0; i < 11; i++) {
+					sum += Number(number.charAt(i)) * (11 - i + (i < 5 ? -5 : 1));
+				}
+				var check = (11 - sum % 11) % 10;
+				
 				var ch0 = number.charAt(0);
 				var ch1 = number.charAt(1);
-				if(number.match('(' + ch0 + ch1 + '){6}') || number.match(/1234567890/) || number.match(/9876543210/))
-				{
+				if(Number(number.charAt(11)) == check ||
+						number.match('('+ ch0 + ch1 +'){6}') ||
+						number.match(/1234567890/) || number.match(/9876543210/)) {
 					window.location.href='result_escape.html';
-				} else
-				{
+				} else {
 					window.location.href='result_caught.html';
 				}
 				return false;
